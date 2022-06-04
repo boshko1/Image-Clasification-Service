@@ -1,0 +1,88 @@
+.imagePopup{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(124, 166, 228);
+    width: 50vw;
+    height: 70vh;
+    box-shadow: 5px 5px 5px  #757575;
+    border-radius: 10px;
+}
+.button{
+    top: -28%;
+    left: 44%;
+    position: relative;
+}
+button{
+    cursor: pointer;
+}
+img{
+    margin-top: 0%;
+    top: 50%;
+
+    max-width: 300px;
+    max-height: 300px;
+}
+.image{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+.outside{
+    scrollbar-color: blue red;
+    position: fixed;
+    max-height: 50%;
+    width: 28%;
+    top: -15%;
+    left: 58%;
+}
+.outside_tags{
+    margin-top: 10%;
+}
+.tags{
+    left: -20%;
+    background-color: rgb(124, 166, 228);
+    top: -40%;
+    margin-top: 5%;
+}
+.tag{
+    margin-right: 5%;
+    text-align: left;
+    top: 0%;
+    margin-top: 0%;
+
+    display: flex;
+    flex-direction: column-reverse;
+}
+.conf{
+    display: none;
+    margin-bottom: 10%;
+}
+.li{
+    cursor: pointer;
+}
+.li:hover + .conf{
+    display: block;
+    position: absolute;
+    background-color: aliceblue;
+    border: 1px solid black;
+}
+.label{
+    font-weight: bold;
+    position: fixed;
+    top: 0%;
+    margin-top: 7%;
+    margin-left: 3%;
+}
+.date{
+    position: fixed;
+    margin-top: 27%;
+    margin-left: 55%;
+}
+.analysed{
+    font-weight: bold;
+    margin-right: 0%;
+}

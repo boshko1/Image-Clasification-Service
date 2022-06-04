@@ -1,0 +1,29 @@
+<div class="outside">
+  <div class="nav">
+    <nav class="nav2">
+      <button class="btn" id="a1" routerLink="/gallery" (click)=" clearStorage(); ngOnInit()"><span style="font-family: cursive;">Gallery</span></button>
+      <button class="btn" id="a2" routerLink="/"><span style="font-family: cursive;">Home</span></button>
+    </nav>
+  </div>
+
+  <div class="search">
+    <form #inputForm="ngForm" (ngSubmit)="filterImages(inputForm.value.tag_form)">
+      <input type="text" id="tag_form" name="tag_form" placeholder="Enter a tag" ng-model="tag_form" ngModel>
+      <input  class="submit" type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+
+
+<div class="images">
+
+  <div *ngIf="getPopupStage()" class="popup">
+    <app-popup-image [image]="currentImage" (popup)="closePopup()">
+    </app-popup-image>
+  </div>
+
+  <div class="image" *ngFor="let image of getImages()">
+    <img class="img" src="{{image.url}}" (click)="openPopup(image)">
+  </div>
+
+</div>

@@ -1,0 +1,30 @@
+<div class="imagePopup">
+
+  <div class="button">
+    <button (click)="closePopup()" style="color: rgb(0, 0, 0); background-color: rgb(141, 163, 235); border-radius: 4px;">X</button>
+  </div>
+
+  <div class="image">
+    <img src="{{image?.url}}">
+  </div>
+
+  <label class="label"><span style="font-family: cursive;">Tags:</span></label>
+
+  <div class="outside" style="overflow-y: auto;">
+    <div class="outside_tags">
+      <div class="tags" *ngFor="let tg of image?.links">
+        <div class="tag">
+          <span class="li" routerLink="/gallery" (click)="setToLocalStorage(tg.tag_name); closePopup()"><span style="font-family: cursive;">{{tg.tag_name}}</span></span>
+          <span class="conf">{{tg.confidence}} %</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="date">
+    <span style="font-family: cursive;"><label class="analysed">Analysed on:</label> <label>{{image?.upload_date}}</label></span>
+  </div>
+
+
+
+</div>

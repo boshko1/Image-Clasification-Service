@@ -1,0 +1,23 @@
+<div class="whole">
+  <div class="outside">
+    <div class="nav">
+      <nav class="nav2">
+        <button class="btn" id="a1" routerLink="/gallery"><span style="font-family: cursive;">Gallery</span></button>
+        <button class="btn" id="a2" routerLink="/"><span style="font-family: cursive;">Home</span></button>
+      </nav>
+    </div>
+  </div>
+
+  <div>
+    <form #inputForm="ngForm" (ngSubmit)="openPopup(inputForm.value.img_url)">
+      <label for="label"><span style="font-family:cursive">Point to an image to tag</span></label><br>
+      <input type="text" id="img_url" name="img_url" placeholder="Enter image URL" ng-model="img_url" ngModel><br>
+      <input class="submit" type="submit" value="Submit">
+    </form>
+
+    <div *ngIf="getPopupState()">
+      <app-popup-image [image]="lastAdded" (popup)="closePopup()">
+      </app-popup-image>
+    </div>
+  </div>
+</div>
